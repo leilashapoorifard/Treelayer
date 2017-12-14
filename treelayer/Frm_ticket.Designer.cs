@@ -36,6 +36,8 @@
             this.txtkarbar = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtlasmo = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtmo = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtend = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtstart = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX8 = new DevComponents.DotNetBar.LabelX();
             this.labelX7 = new DevComponents.DotNetBar.LabelX();
             this.labelX6 = new DevComponents.DotNetBar.LabelX();
@@ -47,8 +49,7 @@
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.dgvbilit = new DevComponents.DotNetBar.Controls.DataGridViewX();
-            this.txtend = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.txtstart = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.panelEx1.SuspendLayout();
             this.groupPanel3.SuspendLayout();
             this.groupPanel2.SuspendLayout();
@@ -80,6 +81,7 @@
             // 
             // groupPanel3
             // 
+            this.groupPanel3.BackColor = System.Drawing.Color.Transparent;
             this.groupPanel3.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.groupPanel3.Controls.Add(this.txtkarbar);
@@ -170,6 +172,34 @@
             this.txtmo.PreventEnterBeep = true;
             this.txtmo.Size = new System.Drawing.Size(266, 28);
             this.txtmo.TabIndex = 14;
+            // 
+            // txtend
+            // 
+            // 
+            // 
+            // 
+            this.txtend.Border.Class = "TextBoxBorder";
+            this.txtend.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtend.Location = new System.Drawing.Point(270, 123);
+            this.txtend.Multiline = true;
+            this.txtend.Name = "txtend";
+            this.txtend.PreventEnterBeep = true;
+            this.txtend.Size = new System.Drawing.Size(266, 35);
+            this.txtend.TabIndex = 12;
+            // 
+            // txtstart
+            // 
+            // 
+            // 
+            // 
+            this.txtstart.Border.Class = "TextBoxBorder";
+            this.txtstart.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtstart.Location = new System.Drawing.Point(270, 87);
+            this.txtstart.Multiline = true;
+            this.txtstart.Name = "txtstart";
+            this.txtstart.PreventEnterBeep = true;
+            this.txtstart.Size = new System.Drawing.Size(266, 30);
+            this.txtstart.TabIndex = 11;
             // 
             // labelX8
             // 
@@ -324,6 +354,7 @@
             // 
             this.groupPanel1.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.groupPanel1.Controls.Add(this.labelX3);
             this.groupPanel1.Controls.Add(this.dgvbilit);
             this.groupPanel1.DisabledBackColor = System.Drawing.Color.Empty;
             this.groupPanel1.Location = new System.Drawing.Point(5, 63);
@@ -362,6 +393,7 @@
             // 
             // dgvbilit
             // 
+            this.dgvbilit.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("B Titr", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
@@ -395,33 +427,20 @@
             this.dgvbilit.Size = new System.Drawing.Size(649, 110);
             this.dgvbilit.TabIndex = 0;
             // 
-            // txtend
+            // labelX3
+            // 
+            this.labelX3.AutoSize = true;
             // 
             // 
             // 
-            // 
-            this.txtend.Border.Class = "TextBoxBorder";
-            this.txtend.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtend.Location = new System.Drawing.Point(270, 123);
-            this.txtend.Multiline = true;
-            this.txtend.Name = "txtend";
-            this.txtend.PreventEnterBeep = true;
-            this.txtend.Size = new System.Drawing.Size(266, 35);
-            this.txtend.TabIndex = 12;
-            // 
-            // txtstart
-            // 
-            // 
-            // 
-            // 
-            this.txtstart.Border.Class = "TextBoxBorder";
-            this.txtstart.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtstart.Location = new System.Drawing.Point(270, 87);
-            this.txtstart.Multiline = true;
-            this.txtstart.Name = "txtstart";
-            this.txtstart.PreventEnterBeep = true;
-            this.txtstart.Size = new System.Drawing.Size(266, 30);
-            this.txtstart.TabIndex = 11;
+            this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX3.Font = new System.Drawing.Font("B Titr", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.labelX3.Location = new System.Drawing.Point(194, 43);
+            this.labelX3.Margin = new System.Windows.Forms.Padding(5);
+            this.labelX3.Name = "labelX3";
+            this.labelX3.Size = new System.Drawing.Size(226, 41);
+            this.labelX3.TabIndex = 1;
+            this.labelX3.Text = "رنگ دیتا گرید عوض شده است";
             // 
             // Frm_ticket
             // 
@@ -442,6 +461,7 @@
             this.groupPanel2.ResumeLayout(false);
             this.groupPanel2.PerformLayout();
             this.groupPanel1.ResumeLayout(false);
+            this.groupPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvbilit)).EndInit();
             this.ResumeLayout(false);
 
@@ -467,5 +487,6 @@
         public DevComponents.DotNetBar.Controls.TextBoxX txtkarbar;
         private DevComponents.DotNetBar.Controls.TextBoxX txtend;
         private DevComponents.DotNetBar.Controls.TextBoxX txtstart;
+        private DevComponents.DotNetBar.LabelX labelX3;
     }
 }

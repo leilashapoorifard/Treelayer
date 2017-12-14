@@ -16,3 +16,6 @@ D:\Ant\treelayer\treelayer\obj\Debug\treelayer.Frm_user.resources
 D:\Ant\treelayer\treelayer\obj\Debug\treelayer.Frm_Login.resources
 D:\Ant\treelayer\treelayer\obj\Debug\treelayer.Frm_Customer.resources
 D:\Ant\treelayer\treelayer\obj\Debug\treelayer.Frm_ticket.resources
+D:\Ant\shapoorifard-godarzi\treelayer\treelayer\bin\Debug\treelayer.exe.config
+D:\Ant\shapoorifard-godarzi\treelayer\treelayer\obj\Debug\treelayer.exe
+D:\Ant\shapoorifard-godarzi\treelayer\treelayer\obj\Debug\treelayer.pdb
