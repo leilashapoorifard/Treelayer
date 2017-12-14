@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="sabtbelitModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Name="CustomerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CuFirstName" Type="nvarchar" MaxLength="50" />
+    <Property Name="CuLastName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Ostan" Type="nvarchar" MaxLength="50" />
+    <Property Name="City" Type="nvarchar" MaxLength="50" />
+    <Property Name="tel" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Orders">
+    <Key>
+      <PropertyRef Name="OrderID" />
+    </Key>
+    <Property Name="OrderID" Type="int" Nullable="false" />
+    <Property Name="EmployeeId" Type="int" Nullable="false" />
+    <Property Name="CustomerID" Type="int" Nullable="false" />
+    <Property Name="Orderdate" Type="nvarchar" MaxLength="20" />
+    <Property Name="ShipName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ShipAddress" Type="nvarchar(max)" />
+    <Property Name="Start" Type="nvarchar" MaxLength="50" />
+    <Property Name="Ends" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="users">
+    <Key>
+      <PropertyRef Name="EmployeeId" />
+    </Key>
+    <Property Name="EmployeeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Firstname" Type="nvarchar" MaxLength="50" />
+    <Property Name="Lastname" Type="nvarchar" MaxLength="50" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" />
+    <Property Name="Tel" Type="int" />
+    <Property Name="pass" Type="nvarchar(max)" />
+    <Property Name="username" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'sabtbelit.dbo.Vw_bilit' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Vw_bilit">
+          <Property Name="CuFirstName" Type="nvarchar" MaxLength="50" />
+          <Property Name="CuLastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Firstname" Type="nvarchar" MaxLength="50" />
+          <Property Name="Lastname" Type="nvarchar" MaxLength="50" />
+          <Property Name="Start" Type="nvarchar" MaxLength="50" />
+          <Property Name="Ends" Type="nvarchar" MaxLength="50" />
+          <Property Name="Orderdate" Type="nvarchar" MaxLength="20" />
+          <Property Name="OrderID" Type="int" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'sabtbelit.dbo.vw_ticket' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vw_ticket">
+    <Key>
+      <PropertyRef Name="OrderID" />
+      <PropertyRef Name="EmployeeId" />
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Name="OrderID" Type="int" Nullable="false" />
+    <Property Name="EmployeeId" Type="int" Nullable="false" />
+    <Property Name="CustomerID" Type="int" Nullable="false" />
+    <Property Name="Orderdate" Type="nvarchar" MaxLength="20" />
+    <Property Name="ShipName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ShipAddress" Type="nvarchar(max)" />
+    <Property Name="Start" Type="nvarchar" MaxLength="50" />
+    <Property Name="Ends" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'sabtbelit.dbo.vw_user' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vw_user">
+    <Key>
+      <PropertyRef Name="EmployeeId" />
+    </Key>
+    <Property Name="Firstname" Type="nvarchar" MaxLength="50" />
+    <Property Name="Lastname" Type="nvarchar" MaxLength="50" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" />
+    <Property Name="Tel" Type="int" />
+    <Property Name="pass" Type="nvarchar(max)" />
+    <Property Name="username" Type="nvarchar" MaxLength="50" />
+    <Property Name="EmployeeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'sabtbelit.dbo.vw-custom' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vw-custom">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Name="CustomerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CuFirstName" Type="nvarchar" MaxLength="50" />
+    <Property Name="CuLastName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Ostan" Type="nvarchar" MaxLength="50" />
+    <Property Name="City" Type="nvarchar" MaxLength="50" />
+    <Property Name="tel" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_Orders_Customer">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Orders_users">
+    <End Role="users" Type="Self.users" Multiplicity="1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="EmployeeId" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="EmployeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="sabtbelitModelStoreContainer">
+    <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="vw_ticket" EntityType="Self.vw_ticket" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_ticket].[OrderID] AS [OrderID], 
+    [vw_ticket].[EmployeeId] AS [EmployeeId], 
+    [vw_ticket].[CustomerID] AS [CustomerID], 
+    [vw_ticket].[Orderdate] AS [Orderdate], 
+    [vw_ticket].[ShipName] AS [ShipName], 
+    [vw_ticket].[ShipAddress] AS [ShipAddress], 
+    [vw_ticket].[Start] AS [Start], 
+    [vw_ticket].[Ends] AS [Ends]
+    FROM [dbo].[vw_ticket] AS [vw_ticket]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_user" EntityType="Self.vw_user" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw_user].[Firstname] AS [Firstname], 
+    [vw_user].[Lastname] AS [Lastname], 
+    [vw_user].[Title] AS [Title], 
+    [vw_user].[Tel] AS [Tel], 
+    [vw_user].[pass] AS [pass], 
+    [vw_user].[username] AS [username], 
+    [vw_user].[EmployeeId] AS [EmployeeId]
+    FROM [dbo].[vw_user] AS [vw_user]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw-custom" EntityType="Self.vw-custom" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vw-custom].[CustomerID] AS [CustomerID], 
+    [vw-custom].[CuFirstName] AS [CuFirstName], 
+    [vw-custom].[CuLastName] AS [CuLastName], 
+    [vw-custom].[Ostan] AS [Ostan], 
+    [vw-custom].[City] AS [City], 
+    [vw-custom].[tel] AS [tel]
+    FROM [dbo].[vw-custom] AS [vw-custom]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_Orders_Customer" Association="Self.FK_Orders_Customer">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Orders_users" Association="Self.FK_Orders_users">
+      <End Role="users" EntitySet="users" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
