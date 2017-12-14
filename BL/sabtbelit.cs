@@ -25,14 +25,14 @@ namespace BL
         public string q = "";
         public string sql;
 
-        public void ADDuser() //      زیر متدهای لایه دیتابیس رو میآور base// از هر کلاسی که مشتق گرفتیم میتوان از بیس استفاده کرد 
-        {
-            base.conct();  // گذاشتن کلمه بیس   باعث میشه از زیر متدهای لایه بالاتر که همان دیتالیر هستش استفاده میشود
-            string sql = "insert into users( Firstname,Lastname,Title,Tel,pass,username) values(N'{0}',N'{1}',N'{2}','{3}','{4}',N'{5}')";
-            sql = string.Format(sql, firstname, lastname, title, tel,password,username);
-            base.docommand(sql);
-            base.disconnect(); 
-        }
+      //  public void ADDuser() //      زیر متدهای لایه دیتابیس رو میآور base// از هر کلاسی که مشتق گرفتیم میتوان از بیس استفاده کرد 
+      ///  {
+      //      base.conct();  // گذاشتن کلمه بیس   باعث میشه از زیر متدهای لایه بالاتر که همان دیتالیر هستش استفاده میشود
+      //      string sql = "insert into users( Firstname,Lastname,Title,Tel,pass,username) values(N'{0}',N'{1}',N'{2}','{3}','{4}',N'{5}')";
+      //      sql = string.Format(sql, firstname, lastname, title, tel,password,username);
+      //      base.docommand(sql);
+      //      base.disconnect(); 
+     //   }
 
         public void insercus() // متد اضافه کردن مسافر 
         {
